@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MyTerminal</string>
+    <string name="bookmarks_title">Bookmarked Flights</string>
+    <string name="details_actual_departure">Actual departure</string>
+    <string name="details_boarding_time">Boarding time</string>
+    <string name="details_checkin">Check in\n%s</string>
+    <string name="details_checkin_close">Check-in close</string>
+    <string name="details_destination">To: %s</string>
+    <string name="details_flight_name">Flight %s</string>
+    <string name="details_gate">Gate\n%s</string>
+    <string name="details_gate_open">Gate opening</string>
+    <string name="details_last_updated">Last updated at:\n%s\n%s</string>
+    <string name="details_scheduled_departure">Scheduled departure:\n%s\n%s</string>
+    <string name="details_status">Status:</string>
+    <string name="details_terminal">Terminal\n%s</string>
+    <string name="generic_cancel">Cancel</string>
+    <string name="generic_confirm">Confirm</string>
+    <string name="generic_retry">Retry</string>
+    <string name="generic_unknown">Unknown</string>
+    <string name="home_title">Departing Flights</string>
+    <string name="navigation_bookmarks">Bookmarks</string>
+    <string name="navigation_home">Home</string>
+    <string name="retrieve_departures_error">An error has occurred while retrieving departures</string>
+    <string name="retrieve_details_error">An error has occurred while retrieving flight details</string>
+    <string name="search_placeholder">Search by destination or flight name</string>
+</resources>
