@@ -47,7 +47,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
 
     // Kotlin
-    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines)
     implementation(libs.kotlinx.collections.immutable)
 
     // Koin

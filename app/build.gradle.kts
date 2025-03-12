@@ -65,7 +65,7 @@ dependencies {
     implementation(libs.compose.navigation)
 
     // Kotlin
-    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines)
     implementation(libs.kotlinx.collections.immutable)
     implementation(libs.kotlinx.serialization)
 
