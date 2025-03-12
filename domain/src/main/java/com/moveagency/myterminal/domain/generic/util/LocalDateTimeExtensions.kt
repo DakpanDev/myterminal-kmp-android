@@ -19,7 +19,3 @@ fun LocalDate.Companion.now(): LocalDate {
 
 fun LocalDate.Companion.fromEpochMilliseconds(millis: Long) =
     Instant.fromEpochMilliseconds(millis).toLocalDateTime(TimeZone.currentSystemDefault()).date
-
-fun LocalTime.Companion.now(): LocalTime {
-    return LocalDateTime.now().time
-}
