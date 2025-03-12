@@ -1,3 +1,12 @@
+include(":myterminal-shared")
+include(":myterminal-domain")
+include(":myterminal-data")
+
+rootProject.children.forEach { project ->
+    val relativeProjectPath: String = project.projectDir.path.replace(settingsDir.path, "")
+    project.projectDir = File("myterminal-shared/$relativeProjectPath")
+}
+
 fun Settings.getExtraPropertyOrDefault(propertyName: String, defaultValue: () -> String): String {
     return if (extra.has(propertyName)) {
         extra[propertyName] as String
@@ -74,9 +83,6 @@ include(":app")
 include(":presentation")
 include(":domain")
 include(":data")
-include(":myterminal-shared")
-include(":myterminal-domain")
-include(":myterminal-data")
 
 dependencyResolutionManagement {
     versionCatalogs {
