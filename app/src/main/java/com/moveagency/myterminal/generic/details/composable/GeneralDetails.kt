@@ -15,7 +15,7 @@ import com.moveagency.myterminal.ui.theme.MyTerminalTheme.colors
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme.typography
 import com.moveagency.myterminal.ui.theme.Spacing
 import kotlinx.collections.immutable.ImmutableList
-import java.time.LocalDateTime
+import kotlinx.datetime.LocalDateTime
 
 @Composable
 fun GeneralDetails(
@@ -28,8 +28,8 @@ fun GeneralDetails(
     modifier = modifier,
     verticalArrangement = Arrangement.spacedBy(Spacing.x1),
 ) {
-    val dateString = remember { departureDateTime.toLocalDate().toDisplayString() }
-    val timeString = remember { departureDateTime.toLocalTime().toString() }
+    val dateString = remember { departureDateTime.date.toDisplayString() }
+    val timeString = remember { departureDateTime.time.toString() }
 
     Text(
         text = stringResource(R.string.details_flight_name, flightName),

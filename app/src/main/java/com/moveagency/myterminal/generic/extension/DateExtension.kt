@@ -1,9 +1,8 @@
 package com.moveagency.myterminal.generic.extension
 
-import java.time.LocalDate
-import java.time.LocalTime
-import java.time.format.DateTimeFormatter
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.LocalTime
 
-fun LocalDate.toDisplayString() = "$dayOfMonth-$monthValue-$year"
+fun LocalDate.toDisplayString() = "$dayOfMonth-$monthNumber-$year"
 
-fun LocalTime.toDisplayString() = format(DateTimeFormatter.ofPattern("HH:mm"))
+fun LocalTime.toDisplayString() = "$hour:$minute"

@@ -1,7 +1,7 @@
 package com.moveagency.myterminal.domain.generic.model
 
-import java.time.LocalDateTime
-import java.time.LocalTime
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 
 data class Flight(
     val id: String,

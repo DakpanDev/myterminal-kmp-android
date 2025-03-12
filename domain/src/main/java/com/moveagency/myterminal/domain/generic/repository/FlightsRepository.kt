@@ -1,8 +1,9 @@
 package com.moveagency.myterminal.domain.generic.repository
 
 import com.moveagency.myterminal.domain.generic.model.Flight
+import com.moveagency.myterminal.domain.generic.util.now
 import kotlinx.coroutines.flow.Flow
-import java.time.LocalDate
+import kotlinx.datetime.LocalDate
 
 interface FlightsRepository {
 

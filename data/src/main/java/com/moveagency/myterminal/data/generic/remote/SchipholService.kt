@@ -9,9 +9,8 @@ import io.ktor.client.request.get
 import io.ktor.client.request.headers
 import io.ktor.http.HttpHeaders
 import io.ktor.http.appendPathSegments
+import kotlinx.datetime.LocalDate
 import org.koin.core.annotation.Factory
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 @Factory
 class SchipholService(
@@ -22,7 +21,7 @@ class SchipholService(
         val response = makeRequest(
             url = FlightsUrl,
             queryParams = mapOf(
-                ParamScheduleDate to date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
+                ParamScheduleDate to date.toString(),
                 ParamPage to page,
                 ParamIncludeDelays to false,
                 ParamFlightDirection to "D",

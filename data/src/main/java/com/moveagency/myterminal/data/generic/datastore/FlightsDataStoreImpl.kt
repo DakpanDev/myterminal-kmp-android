@@ -6,8 +6,8 @@ import com.moveagency.myterminal.data.generic.datastore.model.FlightsCache
 import com.moveagency.myterminal.domain.generic.model.Flight
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.datetime.LocalDate
 import org.koin.core.annotation.Singleton
-import java.time.LocalDate
 
 @Singleton
 class FlightsDataStoreImpl(

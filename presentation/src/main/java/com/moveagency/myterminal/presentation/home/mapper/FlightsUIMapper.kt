@@ -17,6 +17,6 @@ class FlightsUIMapper {
         id = flight.id,
         name = flight.name,
         destination = flight.destination,
-        date = flight.departureDateTime.toLocalDate(),
+        date = flight.departureDateTime.date,
     )
 }

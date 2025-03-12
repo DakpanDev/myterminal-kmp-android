@@ -10,13 +10,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.moveagency.myterminal.domain.generic.util.now
 import com.moveagency.myterminal.generic.extension.toDisplayString
 import com.moveagency.myterminal.presentation.generic.model.FlightUIModel
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme.colors
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme.typography
 import com.moveagency.myterminal.ui.theme.Spacing
-import java.time.LocalDate
+import kotlinx.datetime.LocalDate
 
 @Composable
 fun FlightListItem(

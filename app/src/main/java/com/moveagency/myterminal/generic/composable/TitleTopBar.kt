@@ -12,12 +12,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.m2mobi.utility.utils.date.toLocalDate
 import com.moveagency.myterminal.R
+import com.moveagency.myterminal.domain.generic.util.fromEpochMilliseconds
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme.colors
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme.typography
 import com.moveagency.myterminal.ui.theme.Spacing
-import java.time.*
+import kotlinx.datetime.*
 
 @Composable
 fun TitleTopBar(
@@ -65,7 +67,7 @@ fun TitleTopBar(
                 TextButton(
                     onClick = {
                         datePickerState.selectedDateMillis
-                            ?.let(::millisToLocalDate)
+                            ?.let { LocalDate.fromEpochMilliseconds(it) }
                             ?.let { onDateChange?.invoke(it) }
                         showDatePicker = false
                     },
@@ -112,10 +114,6 @@ fun TitleTopBar(
             colors = DatePickerDefaults.colors(containerColor = colors.primaryGray),
         )
     }
-}
-
-private fun millisToLocalDate(millis: Long): LocalDate {
-    return Instant.ofEpochMilli(millis).atZone(ZoneOffset.systemDefault()).toLocalDate()
 }
 
 @Composable

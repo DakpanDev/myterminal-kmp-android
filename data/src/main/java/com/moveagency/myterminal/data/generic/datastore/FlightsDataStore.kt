@@ -3,7 +3,7 @@ package com.moveagency.myterminal.data.generic.datastore
 import com.moveagency.myterminal.data.generic.datastore.model.FlightsCache
 import com.moveagency.myterminal.domain.generic.model.Flight
 import kotlinx.coroutines.flow.Flow
-import java.time.LocalDate
+import kotlinx.datetime.LocalDate
 
 interface FlightsDataStore {
 

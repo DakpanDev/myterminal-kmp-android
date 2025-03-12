@@ -4,10 +4,8 @@ import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
 import com.moveagency.myterminal.data.database.entity.CheckinRows
 import com.moveagency.myterminal.data.database.entity.States
+import kotlinx.datetime.*
 import org.koin.core.annotation.Factory
-import java.time.LocalDateTime
-import java.time.LocalTime
-import java.time.format.DateTimeFormatter
 
 @Factory
 @ProvidedTypeConverter
@@ -39,29 +37,26 @@ class Converters {
 
     @TypeConverter
     fun fromLocalTime(time: LocalTime): String {
-        return time.format(DateTimeFormatter.ofPattern(TimeFormat))
+        return time.toString()
     }
 
     @TypeConverter
     fun toLocalTime(time: String): LocalTime {
-        return LocalTime.parse(time, DateTimeFormatter.ofPattern(TimeFormat))
+        return LocalTime.parse(time)
     }
 
     @TypeConverter
     fun fromLocalDateTime(dateTime: LocalDateTime): String {
-        return dateTime.format(DateTimeFormatter.ofPattern(DateTimeFormat))
+        return dateTime.toString()
     }
 
     @TypeConverter
     fun toLocalDateTime(dateTime: String): LocalDateTime {
-        return LocalDateTime.parse(dateTime, DateTimeFormatter.ofPattern(DateTimeFormat))
+        return LocalDateTime.parse(dateTime)
     }
 
     companion object {
 
         private const val CommaSeparator = ","
-        private const val DateFormat = "yyyy-MM-dd"
-        private const val TimeFormat = "HH:mm"
-        private const val DateTimeFormat = "${DateFormat}:$TimeFormat"
     }
 }

@@ -1,6 +1,6 @@
 package com.moveagency.myterminal.presentation.generic.model
 
-import java.time.LocalDate
+import kotlinx.datetime.LocalDate
 
 data class FlightUIModel(
     val id: String,

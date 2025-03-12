@@ -24,6 +24,7 @@ dependencies {
     // Kotlin
     implementation(libs.kotlinx.coroutines)
     implementation(libs.kotlinx.collections.immutable)
+    implementation(libs.kotlinx.datetime)
 
     // Koin
     implementation(libs.koin.annotations)

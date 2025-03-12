@@ -1,8 +1,8 @@
 package com.moveagency.myterminal.presentation.generic.model
 
 import kotlinx.collections.immutable.ImmutableList
-import java.time.LocalDateTime
-import java.time.LocalTime
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 
 data class DetailsUIModel(
     val id: String,

@@ -67,6 +67,7 @@ dependencies {
     // Kotlin
     implementation(libs.kotlinx.coroutines)
     implementation(libs.kotlinx.collections.immutable)
+    implementation(libs.kotlinx.datetime)
     implementation(libs.kotlinx.serialization)
 
     // Koin

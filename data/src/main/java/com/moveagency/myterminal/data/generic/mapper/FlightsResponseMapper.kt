@@ -2,9 +2,9 @@ package com.moveagency.myterminal.data.generic.mapper
 
 import com.moveagency.myterminal.data.generic.remote.response.*
 import com.moveagency.myterminal.domain.generic.model.Flight
+import com.moveagency.myterminal.domain.generic.util.parseOffset
+import kotlinx.datetime.LocalDateTime
 import org.koin.core.annotation.Factory
-import java.time.LocalDateTime
-import java.time.OffsetDateTime
 
 @Factory
 class FlightsResponseMapper {
@@ -26,19 +26,16 @@ class FlightsResponseMapper {
             checkinClosingTime = response.checkinRows?.allocations
                 ?.firstOrNull()
                 ?.endTime
-                ?.let { mapStringToDateTime(it).toLocalTime() },
-            gateOpeningTime = response.gateOpeningTime?.let { mapStringToDateTime(it).toLocalTime() },
-            boardingTime = response.boardingTime?.let { mapStringToDateTime(it).toLocalTime() },
-            actualDepartureTime = response.actualDepartureTime?.let { mapStringToDateTime(it).toLocalTime() },
+                ?.let { mapStringToDateTime(it).time },
+            gateOpeningTime = response.gateOpeningTime?.let { mapStringToDateTime(it).time },
+            boardingTime = response.boardingTime?.let { mapStringToDateTime(it).time },
+            actualDepartureTime = response.actualDepartureTime?.let { mapStringToDateTime(it).time },
             lastUpdated = response.lastUpdated?.let(::mapStringToDateTime) ?: return null,
             isBookmarked = false,
         )
     }
 
-    private fun mapStringToDateTime(value: String): LocalDateTime {
-        val offsetDateTime = OffsetDateTime.parse(value)
-        return offsetDateTime.toLocalDateTime()
-    }
+    private fun mapStringToDateTime(value: String) = LocalDateTime.parseOffset(value)
 
     private fun mapCheckinAllocationsToPositions(response: CheckinAllocationsResponse): List<String>? {
         return response.allocations

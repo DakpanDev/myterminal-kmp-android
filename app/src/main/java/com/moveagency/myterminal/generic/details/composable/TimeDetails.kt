@@ -9,7 +9,7 @@ import com.moveagency.myterminal.R
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme.colors
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme.typography
 import com.moveagency.myterminal.ui.theme.Spacing
-import java.time.LocalTime
+import kotlinx.datetime.LocalTime
 
 @Composable
 fun TimeDetails(

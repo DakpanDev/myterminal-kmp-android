@@ -15,6 +15,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.m2mobi.utility.utils.android.mvvm.model.TypedUIState
 import com.moveagency.myterminal.R
+import com.moveagency.myterminal.domain.generic.util.now
 import com.moveagency.myterminal.generic.composable.*
 import com.moveagency.myterminal.generic.composable.state.ErrorState
 import com.moveagency.myterminal.generic.composable.state.LoadingState
@@ -27,8 +28,8 @@ import com.moveagency.myterminal.ui.theme.MyTerminalTheme.colors
 import com.moveagency.myterminal.ui.theme.Spacing
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
+import kotlinx.datetime.LocalDate
 import org.koin.androidx.compose.koinViewModel
-import java.time.LocalDate
 
 @Composable
 fun HomeScreen(

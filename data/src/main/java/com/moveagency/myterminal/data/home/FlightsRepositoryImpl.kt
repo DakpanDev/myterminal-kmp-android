@@ -10,8 +10,8 @@ import com.moveagency.myterminal.domain.generic.model.Flight
 import com.moveagency.myterminal.domain.generic.repository.FlightsRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
+import kotlinx.datetime.LocalDate
 import org.koin.core.annotation.Factory
-import java.time.LocalDate
 
 @Factory
 class FlightsRepositoryImpl(
@@ -69,7 +69,7 @@ class FlightsRepositoryImpl(
     override fun bookmarkFlight(id: String) {
         val flight = flightsDatastore.getFlightDetails(id)
             ?: error("Flight with id $id could not be found")
-        val date = flight.departureDateTime.toLocalDate()
+        val date = flight.departureDateTime.date
         flightsDatastore.bookmarkFlight(flight)
         flightsDatastore.getCachedFlightsByDate(date)
             ?.map { if (it.id != id) it else it.copy(isBookmarked = true) }
@@ -79,7 +79,7 @@ class FlightsRepositoryImpl(
     override fun unBookmarkFlight(id: String) {
         val flight = flightsDatastore.getBookmarkedDetails(id)
             ?: error("Bookmarked flight with id $id could not be found")
-        val date = flight.departureDateTime.toLocalDate()
+        val date = flight.departureDateTime.date
         flightsDatastore.unBookmarkFlight(flight)
         flightsDatastore.getAllCachedFlights()
             ?.map { if (it.id != id) it else it.copy(isBookmarked = false) }

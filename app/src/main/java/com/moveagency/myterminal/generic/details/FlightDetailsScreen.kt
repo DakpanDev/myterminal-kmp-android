@@ -25,10 +25,10 @@ import com.moveagency.myterminal.ui.theme.MyTerminalTheme.colors
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme.typography
 import com.moveagency.myterminal.ui.theme.Spacing
 import kotlinx.collections.immutable.persistentListOf
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
-import java.time.LocalDateTime
-import java.time.LocalTime
 
 @Composable
 fun FlightDetailsScreen(
@@ -111,8 +111,8 @@ private fun NormalContent(
     uiModel: DetailsUIModel,
     modifier: Modifier = Modifier,
 ) = Column(modifier = modifier) {
-    val lastUpdatedDate = remember { uiModel.lastUpdated.toLocalDate().toDisplayString() }
-    val lastUpdatedTime = remember { uiModel.lastUpdated.toLocalTime().toDisplayString() }
+    val lastUpdatedDate = remember { uiModel.lastUpdated.date.toDisplayString() }
+    val lastUpdatedTime = remember { uiModel.lastUpdated.time.toDisplayString() }
 
     GeneralDetails(
         flightName = uiModel.name,
@@ -159,15 +159,15 @@ private fun PreviewDetailsScreen() = MyTerminalTheme {
             name = "HV6935",
             destination = "TIA",
             states = persistentListOf(FlightStatus.Departed),
-            departureDateTime = LocalDateTime.of(2025, 2, 10, 7, 45),
+            departureDateTime = LocalDateTime(2025, 2, 10, 7, 45),
             terminal = 1,
             checkinRows = persistentListOf("1", "2", "3"),
             gate = "E18",
-            checkinClosingTime = LocalTime.of(7, 5),
-            gateOpeningTime = LocalTime.of(6, 45),
-            boardingTime = LocalTime.of(7, 15),
-            actualDepartureTime = LocalTime.of(7, 43),
-            lastUpdated = LocalDateTime.of(2025, 2, 10, 7, 59, 4),
+            checkinClosingTime = LocalTime(7, 5),
+            gateOpeningTime = LocalTime(6, 45),
+            boardingTime = LocalTime(7, 15),
+            actualDepartureTime = LocalTime(7, 43),
+            lastUpdated = LocalDateTime(2025, 2, 10, 7, 59, 4),
             isBookmarked = false,
         )
     )

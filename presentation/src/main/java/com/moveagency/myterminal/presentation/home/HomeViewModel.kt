@@ -8,6 +8,7 @@ import com.m2mobi.utility.utils.android.mvvm.MutableEventFlow
 import com.m2mobi.utility.utils.android.mvvm.model.*
 import com.m2mobi.utility.utils.android.mvvm.model.TypedUIState.Loading
 import com.m2mobi.utility.utils.coroutines.SerialJob
+import com.moveagency.myterminal.domain.generic.util.now
 import com.moveagency.myterminal.domain.home.FetchMoreFlights
 import com.moveagency.myterminal.domain.home.ObserveFlights
 import com.moveagency.myterminal.presentation.generic.model.FlightUIModel
@@ -18,8 +19,8 @@ import com.moveagency.myterminal.presentation.home.navigation.HomeNavigation.Ope
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.datetime.LocalDate
 import org.koin.android.annotation.KoinViewModel
-import java.time.LocalDate
 
 @KoinViewModel
 class HomeViewModel(

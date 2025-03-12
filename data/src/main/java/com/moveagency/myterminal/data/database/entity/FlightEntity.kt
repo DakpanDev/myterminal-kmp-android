@@ -2,8 +2,8 @@ package com.moveagency.myterminal.data.database.entity
 
 import androidx.room.*
 import com.moveagency.myterminal.data.database.Converters
-import java.time.LocalDateTime
-import java.time.LocalTime
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 
 @Entity(tableName = "flight")
 @TypeConverters(Converters::class)
