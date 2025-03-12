@@ -74,3 +74,14 @@ include(":app")
 include(":presentation")
 include(":domain")
 include(":data")
+include(":myterminal-shared")
+include(":myterminal-domain")
+include(":myterminal-data")
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("shared") {
+            from(files("myterminal-shared/gradle/libs.versions.toml"))
+        }
+    }
+}

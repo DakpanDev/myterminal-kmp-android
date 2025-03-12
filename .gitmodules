@@ -1,0 +1,3 @@
+[submodule "myterminal-shared"]
+	path = myterminal-shared
+	url = https://github.com/DakpanDev/myterminal-shared

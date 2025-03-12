@@ -49,6 +49,7 @@ ksp {
 
 dependencies {
     implementation(project(":presentation"))
+    implementation(project(":myterminal-shared"))
     implementation(project(":domain"))
     implementation(project(":data"))
 
