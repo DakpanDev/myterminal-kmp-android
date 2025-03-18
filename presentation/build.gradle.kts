@@ -41,7 +41,7 @@ ksp {
 }
 
 dependencies {
-    implementation(project(":domain"))
+    implementation(project(":myterminal-domain"))
 
     // Android
     implementation(libs.androidx.core.ktx)

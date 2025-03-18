@@ -81,8 +81,6 @@ pluginManagement.repositories.m2ciPlugin()
 rootProject.name = "MyTerminal"
 include(":app")
 include(":presentation")
-include(":domain")
-include(":data")
 
 dependencyResolutionManagement {
     versionCatalogs {

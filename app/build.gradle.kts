@@ -50,8 +50,8 @@ ksp {
 dependencies {
     implementation(project(":presentation"))
     implementation(project(":myterminal-shared"))
-    implementation(project(":domain"))
-    implementation(project(":data"))
+    implementation(project(":myterminal-domain"))
+    implementation(project(":myterminal-data"))
 
     // Androidx
     implementation(libs.androidx.core.ktx)
