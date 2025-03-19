@@ -6,10 +6,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.moveagency.myterminal.composable.MainScreen
+import com.moveagency.myterminal.shared.KoinHelper
 import com.moveagency.myterminal.ui.theme.MyTerminalTheme
 import org.koin.android.ext.koin.androidContext
 import org.koin.compose.KoinContext
-import org.koin.core.context.startKoin
 import org.koin.core.error.KoinApplicationAlreadyStartedException
 import org.koin.ksp.generated.module
 
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 
     private fun setupKoin() {
         try {
-            startKoin {
+            KoinHelper.initKoin {
                 printLogger()
                 androidContext(this@MainActivity)
                 modules(AppModule().module)
