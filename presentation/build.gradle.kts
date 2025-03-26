@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.moveagency.myterminal.presentation"
+    namespace = "com.moveagency.myterminal.shared.presentation"
     compileSdk = 35
 
     defaultConfig {

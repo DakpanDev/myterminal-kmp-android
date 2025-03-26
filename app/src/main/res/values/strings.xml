@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyTerminal</string>
+    <string name="app_name">MyTerminal-Shared</string>
     <string name="bookmarks_title">Bookmarked Flights</string>
     <string name="details_actual_departure">Actual departure</string>
     <string name="details_boarding_time">Boarding time</string>

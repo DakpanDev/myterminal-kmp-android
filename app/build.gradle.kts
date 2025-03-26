@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.moveagency.myterminal"
+    namespace = "com.moveagency.shared.myterminal"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.moveagency.myterminal"
+        applicationId = "com.moveagency.shared.myterminal"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
