@@ -6,7 +6,7 @@ object ColorPalette {
 
     // Generic colors
     val White = Color(0xFFFFFFFF)
-    val PrimaryGray = Color(0xFF383838)
+    val PrimaryGray = Color(0xFF232323)
     val SecondaryGray = Color(0xFFE1E1E1)
 
     // Status colors

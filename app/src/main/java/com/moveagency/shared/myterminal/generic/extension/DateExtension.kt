@@ -5,4 +5,4 @@ import kotlinx.datetime.LocalTime
 
 fun LocalDate.toDisplayString() = "$dayOfMonth-$monthNumber-$year"
 
-fun LocalTime.toDisplayString() = "$hour:$minute"
+fun LocalTime.toDisplayString() = "%02d:%02d".format(hour, minute)
